@@ -1,4 +1,5 @@
-**Title:** ANTEROOM-OF-THE-VOID
+# ANTEROOM-OF-THE-VOID
+
 **Category:** PWN
 **Type:** dynamic
 **Points:** 250
