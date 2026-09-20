@@ -1,20 +1,19 @@
-Diamond Dogs
+# Diamond Dogs
 
-Category: Pwn Difficulty: Medium Author: WubberDuckkie
+**Category:** Pwn 
+**Difficulty:** Medium 
+**Author:** WubberDuckkie
 
-Description
-
+## Description
 The K-9 unit runs a little manager: adopt a dog, name it, and command it to bark, then release it when it retires. A released dog doesn't always stay gone.
 
-Vulnerability
-
+## Vulnerability
 The challenge contains a use-after-free that lets freed chunks still be read and written, giving both a libc leak and a heap write primitive.
 
-Exploitation
-
+## Exploitation
 The vulnerability can be exploited by leaking libc through an unsorted-bin chunk, then poisoning a tcache freelist to overwrite __free_hook with system and calling free on a "/bin/sh" chunk.
 
-Techniques
+## Techniques
 Use-After-Free
 Unsorted Bin Leak
 Tcache Poisoning

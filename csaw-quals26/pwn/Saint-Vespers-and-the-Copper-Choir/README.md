@@ -1,20 +1,19 @@
-Saint Vespers and the Copper Choir
+# Saint Vespers and the Copper Choir
 
-Category: Pwn Difficulty: Medium Author: WubberDuckkie
+**Category:** Pwn 
+**Difficulty:** Medium 
+**Author:** WubberDuckkie
 
-Description
-
+## Description
 A cathedral machine preserves "holy" recordings in copper coils and replays them on command, keeping choir entries and rendering hymns from stored fragments. A bug in the restoration path leaves a dangling object behind.
 
-Vulnerability
-
+## Vulnerability
 The challenge contains a use-after-free: the restore path revives a retired entry without clearing its pointer, so a freed chorister can still be read and reallocated.
 
-Exploitation
-
+## Exploitation
 The vulnerability can be exploited by leaking libc through an unsorted-bin chunk, then reclaiming a freed chorister with a fake object whose function pointer (offset 0x38) is system and whose buffer starts with "/bin/sh", so performing the choir calls system("/bin/sh").
 
-Techniques
+## Techniques
 Use-After-Free
 Unsorted Bin Leak
 Heap Chunk Reuse
