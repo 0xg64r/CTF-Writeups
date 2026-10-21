@@ -31,7 +31,6 @@ def finding_bits(p, index):
 
         current_wrong = check(p, index, current)
 
-        # Exact match
         if current_wrong == 0:
             return current
 
